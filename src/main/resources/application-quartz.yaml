@@ -1,0 +1,25 @@
+spring:
+  autoconfigure:
+    exclude: >
+      org.jobrunr.spring.autoconfigure.JobRunrAutoConfiguration,
+      org.jobrunr.spring.autoconfigure.metrics.JobRunrMetricsAutoConfiguration,
+      org.jobrunr.spring.autoconfigure.storage.JobRunrSqlStorageAutoConfiguration,
+      com.github.kagkarlsson.scheduler.boot.autoconfigure.DbSchedulerAutoConfiguration,
+      com.github.kagkarlsson.scheduler.boot.autoconfigure.DbSchedulerMetricsAutoConfiguration
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: never
+    properties:
+      org.quartz:
+        threadPool:
+          class: org.quartz.simpl.SimpleThreadPool
+          threadCount: 50
+        scheduler:
+          instanceName: MyScheduler
+          batchTriggerAcquisitionMaxCount: 500
+          batchTriggerAcquisitionFireAheadTimeWindow: 100
+        jobStore:
+          driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+          misfireThreshold: 9223372036854775807
+

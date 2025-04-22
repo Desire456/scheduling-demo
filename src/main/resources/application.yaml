@@ -1,0 +1,8 @@
+spring:
+  application.name: scheduling-demo
+  profiles:
+    active: quartz
+  datasource:
+    url: jdbc:postgresql://localhost:5435/scheduling_demo
+    username: postgres
+    password: postgres

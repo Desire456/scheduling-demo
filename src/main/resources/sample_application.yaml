@@ -1,0 +1,9 @@
+spring:
+  application.name: scheduling-demo
+  datasource:
+    url: jdbc:postgresql://localhost:5435/scheduling_demo
+    username: postgres
+    password: postgres
+db-scheduler:
+  threads: 5
+  polling-interval: 1s

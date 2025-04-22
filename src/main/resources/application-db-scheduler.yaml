@@ -1,0 +1,11 @@
+spring:
+  autoconfigure:
+    exclude: >
+      org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration,
+      org.jobrunr.spring.autoconfigure.JobRunrAutoConfiguration,
+      org.jobrunr.spring.autoconfigure.metrics.JobRunrMetricsAutoConfiguration,
+      org.jobrunr.spring.autoconfigure.storage.JobRunrSqlStorageAutoConfiguration
+
+db-scheduler:
+  threads: 5
+  polling-interval: 1s

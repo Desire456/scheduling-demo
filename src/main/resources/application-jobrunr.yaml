@@ -1,0 +1,12 @@
+spring:
+  autoconfigure:
+    exclude: >
+      org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration,
+      com.github.kagkarlsson.scheduler.boot.autoconfigure.DbSchedulerAutoConfiguration,
+      com.github.kagkarlsson.scheduler.boot.autoconfigure.DbSchedulerMetricsAutoConfiguration
+
+org.jobrunr:
+    background-job-server:
+      enabled: true
+      poll-interval-in-seconds: 5
+    dashboard.enabled: true
